@@ -1,8 +1,9 @@
 let bird,sprite;
-let pipes = []
+let pipes = [];
 let startGame = false;
 let startText = 'press spacebar to start';
 let count = 0;
+
 
 function preload() {
     sprite = loadImage("assets/flappy-sprite.png");
@@ -43,7 +44,10 @@ function draw() {
         
 
             // if bird passes +1
-            pipes[i].pass(bird)
+            if (pipes[i].pass(bird)) {
+                count++
+                
+           }
              
             if (pipes[i].isOffScreen()) {
             pipes.splice(i,1)

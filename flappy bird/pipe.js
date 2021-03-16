@@ -1,29 +1,28 @@
 function Pipe() {
-    this.gap = random(100, height / 2);
-    this.topTube = height/2 - this.gap/2;
-    this.bottomTube = height/2 - this.gap/2;
+    this.gap = random(180, height / 2);
+    this.topTube = random(50,height/2) ;
+    this.bottomTube = height - this.topTube - this.gap;
     this.x = width;
     this.w = 50;
     this.speed = 3;
-    this.fill = 'white'
-
-    
-    
+    this.fill = 'white';
 
     this.hits = function (bird) {
         if (bird.y < this.topTube || bird.y > height - this.bottomTube) {
             if (bird.x > this.x && bird.x < this.x + this.w) {
-                this.fill = 'green'
+                this.fill = 'black'
                 bird.dead = true;
               
             } 
         }
     }
-
+      
     this.pass = function (bird) {
-        if (bird.x > this.x && bird.x > this.x + this.w) {
-            console.log('passed');
+      
+        if (bird.x == this.x) {
+            return true;
         }
+       
     }
 
     this.show = function () {
@@ -34,8 +33,7 @@ function Pipe() {
     }
    
     this.move = function () {
-        this.x -= this.speed;
-        
+        this.x -= this.speed; 
     }
    
     this.isOffScreen = function () {

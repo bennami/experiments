@@ -14,7 +14,6 @@ function Bird(sprite) {
 
     this.up = function () {
         this.velocity += this.lift
-        this.velocity *= 0.9
     }
 
     // then we will need to update the position so it goes down
@@ -34,8 +33,6 @@ function Bird(sprite) {
             this.velocity = 0;
         }
     }
-
-    //we need to make it go up
 }
 
 
