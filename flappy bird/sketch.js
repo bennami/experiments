@@ -40,9 +40,10 @@ function draw() {
 
             //check if bird hits pipe
             pipes[i].hits(bird)
+        
 
             // if bird passes +1
-
+            pipes[i].pass(bird)
              
             if (pipes[i].isOffScreen()) {
             pipes.splice(i,1)

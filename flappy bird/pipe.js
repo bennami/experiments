@@ -1,12 +1,12 @@
 function Pipe() {
-    let gap=random(100, height / 2);
-    this.topTube = height/2 - gap/2;
-    this.bottomTube = height/2 - gap/2;
+    this.gap = random(100, height / 2);
+    this.topTube = height/2 - this.gap/2;
+    this.bottomTube = height/2 - this.gap/2;
     this.x = width;
-    this.w = 40;
+    this.w = 50;
     this.speed = 3;
     this.fill = 'white'
-   
+
     
     
 
@@ -16,10 +16,13 @@ function Pipe() {
                 this.fill = 'green'
                 bird.dead = true;
               
-            } else if (bird.x > this.x && bird.x > this.x + this.w) {
-                count++
-                console.log('pass');
-            }
+            } 
+        }
+    }
+
+    this.pass = function (bird) {
+        if (bird.x > this.x && bird.x > this.x + this.w) {
+            console.log('passed');
         }
     }
 
@@ -40,4 +43,5 @@ function Pipe() {
             return true;  
         }
     }
+
 }
