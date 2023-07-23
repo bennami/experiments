@@ -1,5 +1,5 @@
 
-function Bubble(x, y,img) {
+function Cat(x, y,img) {
   
   this.x = x;
   this.y = y;
@@ -8,7 +8,6 @@ function Bubble(x, y,img) {
   this.display = function () {
     imageMode(CENTER);
     image(img, this.x, this.y);
-    //img.resize(50)
   }
  
   this.update = function () {
